@@ -128,3 +128,7 @@ button:hover {
 	padding-right: 10px;
 	padding-top: 3px;
 }
+
+.globeIcon {
+  cursor: default;
+}
