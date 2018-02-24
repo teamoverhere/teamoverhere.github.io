@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
  <head>
- <title>overhere nz</title>
+ <title>overhere.live</title>
 	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 	<script src="https://cdn.firebase.com/libs/geofire/4.1.2/geofire.min.js"></script>
 	<link rel="stylesheet" href="style.css">
@@ -11,23 +11,24 @@
   <body>
 		<div class="wrapper">
 			<div class="header">
-		  	<h1>overhere</h1>
-		  	<p class="desc">🔥 chat with people nearby</p>
+		  	<h1>overhere.live</h1>
+		  	<p class="desc">📯 chat with people nearby 📯</p>
+		  	<div class="lastLocationUpdate">Choose a location</div><br>
+		    <button class="updateLocationButton">Use my real location</button>
+		    <button class="defaultLocationButton">Use a popular location</button>
 		  </div>
 		  <div class="messagesWrap">
 		    <ul class="messages"></ul>
 		  </div>
+		  <div class="locationReminder">Tap the globe to update your location</div>
 		  <div class="controls">
 			  <form action="" class="chat">
 			    <!--<input type='text' id='nameInput' placeholder='name' required maxlength=10> -->
-			    <input type='text' id='messageInput'  placeholder='Type a message...' required maxlength=140 autocomplete="off">
-			    <!--<input type="submit" value="Send →">
-			    <small>Be nice.</small>    -->
+			    <div class="nameDisplay barIcon"></div><input type='text' id='messageInput'  placeholder='Type a message...' required maxlength=140 autocomplete="off" >
+			    <div href="#" class="globeIcon barIcon">🌏</div>
+			    <!--<input type="submit" value="Send →">-->
 			  </form>
-		  	<button class="defaultLocationButton">Use home location</button>
-		    <button class="updateLocationButton">Use my real location</button>
-		    <div class="nameDisplay"></div><div class="lastLocationUpdate">location updated: never</div>
-		  </div>
+		  </div> 
 		</div>
 	<script src="script.js"></script>
   </body>

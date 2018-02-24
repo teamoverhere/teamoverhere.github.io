@@ -1,9 +1,15 @@
 .controls {
-	background: #e5e5e5;
+	background-color: #fafafa;
 	position: fixed;
 	bottom: 0;
 	left: 0;
 	width: 100%;
+}
+
+form {
+	width:100%;
+	display: flex;
+	flex-direction: row;
 }
 
 .header {
@@ -19,7 +25,7 @@ h1 {
 	margin-bottom: 10px;
 }
 
-p {
+.desc {
 	margin-left: 20px;
 }
 
@@ -30,13 +36,14 @@ input, textarea, select, button {
 body, html {margin: 0; padding: 0; background: #e5e5e5;}
 
 body {
-  margin-bottom: 200px;
+  margin-bottom: 30px; /* this would go behind the controls bar */
   clear: both;
   font-family: 'Lato', sans-serif;
 }
 
 ul {
 	padding: 0;
+	margin-bottom: 0;
 }
 
 li {
@@ -68,18 +75,20 @@ li {
 }
 
 input {
-	width: 100%;
-	height: 50px;
+	display: inline-block;
+	box-sizing: border-box;
+	height: 30px;
 	background-color: #fafafa;
 	color: #666;
-	padding-left: 55px;
-    padding-right: 55px;
-    border: none;
-    outline: none;
+	padding-left: 0px;
+	padding-right: 10px;
+	border: none;
+	outline: none;
+	flex-grow: 1;
 }
 
 button {
-    padding: 15px 32px;
+    padding: 15px 15px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -100,14 +109,22 @@ button:hover {
     color: white;
 }
 
-.nameDisplay {
-	padding: 10px;
-	display: inline-block;
-	padding-top: 0;
-}
-
 .lastLocationUpdate {
 	display: inline-block;
 	padding: 10px;
 	padding-top: 0;
+}
+
+.locationReminder {
+	display: inline-block;
+	margin: 10px;
+	color: #777;
+	margin-top: 0px;
+}
+
+.barIcon {
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 3px;
 }

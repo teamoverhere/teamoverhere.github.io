@@ -25,6 +25,7 @@ var messageList = document.querySelector('.messages')
 const updateButton = document.querySelector('.updateLocationButton')
 const resetLocationButton = document.querySelector('.defaultLocationButton')
 const lastLocUpdateEl = document.querySelector('.lastLocationUpdate')
+const globeIconEl = document.querySelector('.globeIcon')
 
 document.querySelector('.chat').addEventListener('submit',function(e) {
   e.preventDefault();
@@ -38,12 +39,9 @@ document.querySelector('.chat').addEventListener('submit',function(e) {
   saveGeoTag(newPostRef.key)
 });
 
-updateButton.addEventListener('click', function (e) {
-	getLocation()
-})
-resetLocationButton.addEventListener('click', function (e) {
-	setDefaultLocation()
-})
+updateButton.addEventListener('click', getLocation)
+globeIconEl.addEventListener('click', getLocation)
+resetLocationButton.addEventListener('click', setDefaultLocation)
 
 function saveGeoTag(postKey) {
   var latitude = lat
@@ -58,7 +56,7 @@ var firebaseRef = firebase.database().ref("locations")
 var geoFire = new GeoFire(firebaseRef);
 
 /* Uses the HTML5 geolocation API to get the current user's location */
-var getLocation = function() {
+function getLocation() {
   if (typeof navigator !== "undefined" && typeof navigator.geolocation !== "undefined") {
     //log("Asking user to get their location");
     navigator.geolocation.getCurrentPosition(function (loc) {
@@ -75,7 +73,7 @@ var getLocation = function() {
 function setDefaultLocation () {
 	lat = defaultLat
 	lon = defaultLon
-	lastLocUpdateEl.innerText = "Location is Auckland Uni quad";
+	lastLocUpdateEl.innerText = "Location set to: Auckland Uni quad"
 	query()	
 }
 
@@ -166,4 +164,3 @@ function randomEmoji(){
 
 name = randomEmoji()
 document.querySelector(".nameDisplay").innerText = name
-setDefaultLocation()
