@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+ <title>overhere nz</title>
+	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/geofire/4.1.2/geofire.min.js"></script>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Raleway:200" rel="stylesheet">
+  </head>
+  <body>
+		<div class="wrapper">
+			<div class="header">
+		  	<h1>overhere</h1>
+		  	<p class="desc">🔥 chat with people nearby</p>
+		  </div>
+		  <div class="messagesWrap">
+		    <ul class="messages"></ul>
+		  </div>
+		  <div class="controls">
+			  <form action="" class="chat">
+			    <!--<input type='text' id='nameInput' placeholder='name' required maxlength=10> -->
+			    <input type='text' id='messageInput'  placeholder='Type a message...' required maxlength=140>
+			    <!--<input type="submit" value="Send →">
+			    <small>Be nice.</small>    -->
+			  </form>
+		  	<button class="defaultLocationButton">Use home location</button>
+		    <button class="updateLocationButton">Use my real location</button>
+		    <div class="nameDisplay"></div><div class="lastLocationUpdate">location updated: never</div>
+		  </div>
+		</div>
+	<script src="script.js"></script>
+  </body>
+</html>
